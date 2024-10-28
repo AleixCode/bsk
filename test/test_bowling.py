@@ -9,16 +9,16 @@ class TestBowlingGame(unittest.TestCase):
 
     def test_game_points_sum(self):
         game = BowlingGame()
-        f0 = Frame(1, 5)
-        f1 = Frame(3,6)
-        f2 = Frame(7,2)
-        f3 = Frame(3,6)
-        f4 = Frame(4,4)
-        f5 = Frame(5,3)
-        f6 = Frame(3,3)
-        f7 = Frame(4,5)
-        f8 = Frame(8,1)
-        f9 = Frame(2,8)
+        f0 = Frame(10, 0)
+        f1 = Frame(10, 0)
+        f2 = Frame(10, 0)
+        f3 = Frame(10, 0)
+        f4 = Frame(10, 0)
+        f5 = Frame(10, 0)
+        f6 = Frame(10, 0)
+        f7 = Frame(10, 0)
+        f8 = Frame(10, 0)
+        f9 = Frame(10, 0)
 
         game.add_frame(f0)
         game.add_frame(f1)
@@ -30,10 +30,10 @@ class TestBowlingGame(unittest.TestCase):
         game.add_frame(f7)
         game.add_frame(f8)
         game.add_frame(f9)
-        game.set_first_bonus_throw(7)
-        game.set_second_bonus_throw(2)
+        game.set_first_bonus_throw(10)
+        game.set_second_bonus_throw(10)
 
-        self.assertEqual(92, game.calculate_score())
+        self.assertEqual(300, game.calculate_score())
 
     def test_game_points_sum(self):
         game = BowlingGame()
