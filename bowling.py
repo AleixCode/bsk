@@ -22,6 +22,8 @@ class BowlingGame:
         for i in range(0, len(self.frames)):
             if self.frames[i].is_spare() and i+1 < len(self.frames):
                 self.frames[i].set_bonus(self.frames[i+1].get_first_throw())
+            elif self.frames[i].is_strike() and i+1 < len(self.frames):
+                self.frames[i].set_bonus(self.frames[i+1].score())
             total += self.frames[i].score()
 
         return total
