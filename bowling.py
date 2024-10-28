@@ -19,7 +19,15 @@ class BowlingGame:
 
     def calculate_score(self) -> int:
         total = 0
+        spare = False
         for frame in self.frames:
+            if spare:
+                total += frame.get_first_throw()
+                spare = False
+
+            if frame.is_spare():
+                spare = True
+
             total += frame.score()
         return total
 
