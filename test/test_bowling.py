@@ -31,6 +31,34 @@ class TestBowlingGame(unittest.TestCase):
         game.add_frame(f8)
         game.add_frame(f9)
         game.set_first_bonus_throw(7)
+        game.set_second_bonus_throw(2)
+
+        self.assertEqual(92, game.calculate_score())
+
+    def test_game_points_sum(self):
+        game = BowlingGame()
+        f0 = Frame(1, 5)
+        f1 = Frame(3,6)
+        f2 = Frame(7,2)
+        f3 = Frame(3,6)
+        f4 = Frame(4,4)
+        f5 = Frame(5,3)
+        f6 = Frame(3,3)
+        f7 = Frame(4,5)
+        f8 = Frame(8,1)
+        f9 = Frame(2,8)
+
+        game.add_frame(f0)
+        game.add_frame(f1)
+        game.add_frame(f2)
+        game.add_frame(f3)
+        game.add_frame(f4)
+        game.add_frame(f5)
+        game.add_frame(f6)
+        game.add_frame(f7)
+        game.add_frame(f8)
+        game.add_frame(f9)
+        game.set_first_bonus_throw(7)
 
         self.assertEqual(90, game.calculate_score())
 
